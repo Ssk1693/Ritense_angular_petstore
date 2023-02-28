@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <h4 class=""fw-bold>Add Pet</h4>
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+ <mat-form-field>
+    <p>
+      <label for="petname">Pet Name</label>
+      <input class="form-control" type="text" name="petname" ngModel fxFlex="100">
+    </p>
+</mat-form-field>
+<mat-form-field>
+    <p>
+      <label for="id">Id</label>
+      <input type="text" name="id" ngModel>
+    </p>
+</mat-form-field>
+<mat-form-field>
+   
+    <div class="field">
+        <select class="titledropdown">
+            <label>Status</label>
+    <option value="">--select an option</option>
+            <option *ngFor="let status of status" [selected]="status.isDefault ? 'selected' :''">{{status.status}}</option>
+        </select>
+    </div>
+</mat-form-field>
+   
+   
+   
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+    
+  </form>
+</div>
+
+
+
+

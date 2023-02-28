@@ -1,0 +1,93 @@
+
+
+
+
+<h1>Welcome to our Pet Store!</h1>
+
+<img src="https://cdn-icons-png.flaticon.com/512/3460/3460335.png">
+
+<mat-tab-group>
+    <mat-tab label="Available">
+
+      <table mat-table class="table_info">
+
+        <ng-container matColumnDef="type">
+          <th class="header type-column" mat-header-cell *matHeaderCellDef>
+            <span>Type</span>
+            <button mat-button mat-sort-header class="float-right btn-icon">
+              <mat-icon class="sort-icon" svgIcon="sortIcon"></mat-icon>
+            </button>
+          </th>
+      
+      <tr> 
+        <th> ID  </th>
+        <th>Name  </th>
+        <th> Status  </th>
+        <th> Image</th>
+      </tr>
+          <tr mat-cell *ngFor="let name of petdataA; let i=index" >
+            <td>{{i+1}}-{{name.category.id}}</td>
+            <td>{{i+1}}-{{name.category.name}}</td>
+            <td>{{i+1}}-{{name.status}}</td>
+            <td>{{i+1}}-{{name.photoUrls}}</td>
+            </tr>
+        </ng-container>
+        
+      </table>
+      
+    </mat-tab>
+
+    <mat-tab label="Pending">
+
+      <table mat-table class="table_info">
+
+        <ng-container matColumnDef="type">
+            
+      
+        <th> ID  </th>
+        <th>Name  </th>
+        <th> Status  </th>
+        <th> Image</th>
+      
+          <div mat-cell *ngFor="let name of petdataP; let i=index" >
+            <td>{{i+1}}-{{name.category.id}}</td>
+            <td>{{i+1}}-{{name.category.name}}</td>
+            <td>{{i+1}}-{{name.photoUrls}}</td>
+          </div>
+        </ng-container>
+        
+
+      </table>
+      
+    </mat-tab>
+
+    <mat-tab label="Sold">
+
+      <table mat-table class="table_info">
+
+        <ng-container matColumnDef="type">
+            
+      
+        <th> ID  </th>
+        <th>Name  </th>
+        <th> Status  </th>
+        <th> Image</th>
+      
+          <div mat-cell *ngFor="let name of petdataS; let i=index" >
+            <td>{{i+1}}-{{name.category.id}}</td>
+            <td>{{i+1}}-{{name.category.name}}</td>
+            <td>{{i+1}}-{{name.photoUrls}}</td>
+          </div>
+        </ng-container>
+        
+
+      </table>
+      
+    </mat-tab>
+    
+
+</mat-tab-group>
+
+<button type="button" id="button_add" class="btn btn-primary-outline pull-right" (click)="btnClick();"><i class="fa fa-plus"></i> Add
+<a routerLink="add" class="nav-link" routerLinkActive="active"></a>
+</button>  
